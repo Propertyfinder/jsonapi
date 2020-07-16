@@ -464,6 +464,10 @@ func visitModelNode(model interface{}, included *map[string]*Node,
 		node.Meta = metableModel.JSONAPIMeta()
 	}
 
+	if dynamicTypeModel, ok := model.(DynamicTyping); ok {
+		node.Type = dynamicTypeModel.JSONAPIType()
+	}
+
 	return node, nil
 }
 

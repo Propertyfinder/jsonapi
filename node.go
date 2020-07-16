@@ -119,3 +119,8 @@ type RelationshipMetable interface {
 	// JSONRelationshipMeta will be invoked for each relationship with the corresponding relation name (e.g. `comments`)
 	JSONAPIRelationshipMeta(relation string) *Meta
 }
+
+// DynamicTyping is used to change type in real-time
+type DynamicTyping interface {
+	JSONAPIType() string
+}
